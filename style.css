@@ -1,5 +1,17 @@
+html {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background: url(img/background.jpeg) no-repeat center center fixed; 
+    background-size: cover;
+}
+
+body {
+    
+}
+
 .grid {
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
     flex-wrap: wrap;
     height: 300px;
     width: 600px;
