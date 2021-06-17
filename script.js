@@ -100,11 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
         var cards = document.querySelectorAll('img');
         const optionOneId = cardsChosenId[0];
         const optionTwoId = cardsChosenId[1];
-        if (cardsChosen[0] === cardsChosen[1]) {
+        if (cardsChosen[0] === cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]) {
             alert('You found a match!');
             cards[optionOneId].setAttribute('src', 'img/white.png');
             cards[optionTwoId].setAttribute('src', 'img/white.png');
             cardsWon.push(cardsChosen);
+            // Remove click listener after making match
+            cards[optionOneId].removeEventListener('click', flipCard);
+            cards[optionTwoId].removeEventListener('click', flipCard);
         } else {
             cards[optionOneId].setAttribute('src', 'img/pokeball.jpeg')
             cards[optionTwoId].setAttribute('src', 'img/pokeball.jpeg')
